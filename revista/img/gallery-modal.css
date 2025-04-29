@@ -1,0 +1,314 @@
+/* gallery-modal.css - Estilos para el modal de galería (100% independiente) */
+
+.gallery-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-modal-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gallery-modal-content {
+    background-color: #8bbbd9; /* Color azul del diseño */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #8bbbd9, #6a9bc0);
+}
+
+/* Botón para cerrar el modal */
+.gallery-modal-close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Cabecera del modal */
+.gallery-modal-header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-modal-header .number {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.gallery-modal-header .title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Imagen principal */
+.gallery-modal-image {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.gallery-modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Etiqueta lateral */
+.gallery-modal-side-label {
+    position: absolute;
+    left: 20px;
+    top: 40%; 
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+}
+
+/* Información de publicación */
+.gallery-modal-publish-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Contenido del modal */
+.gallery-modal-body {
+    padding: 0 20px 20px;
+}
+
+.gallery-modal-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.gallery-modal-text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Imágenes adicionales en forma de placeholder */
+.gallery-modal-placeholder {
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+/* Formulario en la parte inferior */
+.gallery-modal-form {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.gallery-modal-form-title {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.gallery-modal-form-field {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.gallery-modal-form-field input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 0;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.gallery-modal-form-field input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Enlaces de navegación en la parte inferior */
+.gallery-modal-nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.gallery-modal-nav-btn {
+    background-color: white;
+    color: #6a9bc0;
+    border: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Estilo para separadores */
+.gallery-modal-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 30px 0;
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .gallery-modal-content {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-modal-container {
+        padding: 0;
+    }
+    
+    .gallery-modal-content {
+        width: 100%;
+        max-width: none;
+        min-height: 100%;
+    }
+    
+    .gallery-modal-side-label {
+        display: none;
+    }
+    
+    .gallery-modal-title {
+        font-size: 24px;
+    }
+    
+    .gallery-modal-text {
+        font-size: 15px;
+    }
+    
+    .gallery-modal-header {
+        padding: 15px;
+    }
+    
+    .gallery-modal-header .number,
+    .gallery-modal-header .title {
+        font-size: 16px;
+    }
+    
+    .gallery-modal-image {
+        padding: 0 15px;
+    }
+    
+    .gallery-modal-body {
+        padding: 0 15px 15px;
+    }
+    
+    .gallery-modal-form-title {
+        font-size: 20px;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .gallery-modal-header .number,
+    .gallery-modal-header .title {
+        font-size: 14px;
+    }
+    
+    .gallery-modal-title {
+        font-size: 22px;
+    }
+    
+    .gallery-modal-text {
+        font-size: 14px;
+    }
+    
+    .gallery-modal-form-title {
+        font-size: 18px;
+    }
+    
+    .gallery-modal-form-field input {
+        font-size: 15px;
+    }
+}
+
+/* Animación de aparecer para el modal */
+.gallery-modal-overlay.active {
+    opacity: 1;
+}
+
+/* Prevenir scroll en el body cuando el modal está abierto */
+body.gallery-modal-open {
+    overflow: hidden;
+}
+
+/* Ajustes específicos para iPad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+    .gallery-modal-content {
+        max-width: 90%;
+    }
+}
+
+/* Ajustes para orientación landscape en dispositivos móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .gallery-modal-content {
+        margin: 10px auto;
+    }
+    
+    .gallery-modal-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .gallery-modal-text {
+        margin-bottom: 15px;
+    }
+    
+    .gallery-modal-form-field {
+        margin-bottom: 15px;
+    }
+}
